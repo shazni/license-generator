@@ -18,9 +18,8 @@ Hello there. Welcome to License Generator.\n\
 This Docker container contains runnable License Generator.\n\
 -------------------------------------------------------------------------------------- \n"
 
-RUN \
-    groupadd --system -g 11786 ${USER_GROUP} \
-    && useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g 11786 -u 11786 ${USER} \
+RUN addgroup -g 11786 choreo && \
+    adduser --disabled-password  --no-create-home --uid 11786 --ingroup choreo choreouser \
     && echo '[ ! -z "${TERM}" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc; echo "${MOTD}" > /etc/motd
 
 RUN \
