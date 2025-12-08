@@ -30,7 +30,6 @@ RUN \
 RUN \
     wget -O ${APP_SERVER}.zip "${SERVER_DIST_URL}" \
     && unzip -d ${USER_HOME} ${APP_SERVER}.zip \
-    && chown ${USER}:${USER_GROUP} -R ${APP_SERVER} \
     && rm -f ${APP_SERVER}.zip
 
 RUN \
