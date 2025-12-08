@@ -1,9 +1,9 @@
 FROM fedora:43
 LABEL maintainer="mshazninazeer@gmail.com"
 
-ARG USER=hydrogen
+ARG USER=choreouser
 ARG USER_ID=10786
-ARG USER_GROUP=electron
+ARG USER_GROUP=choreo
 ARG USER_GROUP_ID=10786
 ARG USER_HOME=/home/${USER}
 ARG APP_NAME=license-generator
@@ -19,8 +19,8 @@ This Docker container contains runnable License Generator.\n\
 -------------------------------------------------------------------------------------- \n"
 
 RUN \
-    groupadd --system -g ${USER_GROUP_ID} ${USER_GROUP} \
-    && useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g ${USER_GROUP_ID} -u ${USER_ID} ${USER} \
+    groupadd --system -g 11786 ${USER_GROUP} \
+    && useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g 11786 -u 11786 ${USER} \
     && echo '[ ! -z "${TERM}" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc; echo "${MOTD}" > /etc/motd
 
 RUN \
@@ -39,7 +39,7 @@ RUN \
     && dnf -y remove unzip \
     && dnf -y clean all
 
-USER ${USER_ID}
+USER 11786
 WORKDIR ${APP_SERVER}/bin
 
 ENV WORKING_DIRECTORY=${APP_SERVER} \
