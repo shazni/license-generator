@@ -2,9 +2,9 @@ FROM fedora:43
 LABEL maintainer="mshazninazeer@gmail.com"
 
 ARG USER=hydrogen
-ARG USER_ID=786
+ARG USER_ID=10786
 ARG USER_GROUP=electron
-ARG USER_GROUP_ID=786
+ARG USER_GROUP_ID=10786
 ARG USER_HOME=/home/${USER}
 ARG APP_NAME=license-generator
 ARG VERSION=-0.1-x86_64
