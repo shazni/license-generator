@@ -43,6 +43,6 @@ WORKDIR ${APP_SERVER}/bin
 ENV WORKING_DIRECTORY=${APP_SERVER} \
     USER_HOME=${USER_HOME}
 
-COPY --chown=${USER}:${USER_GROUP} container-entrypoint.sh ${WORKING_DIRECTORY}/bin
+COPY container-entrypoint.sh ${WORKING_DIRECTORY}/bin
 
 ENTRYPOINT ["./container-entrypoint.sh"]
