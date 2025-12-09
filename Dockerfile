@@ -43,6 +43,6 @@ WORKDIR ${APP_SERVER}/bin
 ENV WORKING_DIRECTORY=${APP_SERVER} \
     USER_HOME=${USER_HOME}
 
-COPY container-entrypoint.sh ${WORKING_DIRECTORY}/bin
+COPY --chmod=0755 container-entrypoint.sh ${WORKING_DIRECTORY}/bin
 
 ENTRYPOINT ["./container-entrypoint.sh"]
