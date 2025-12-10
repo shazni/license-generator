@@ -7,10 +7,10 @@ ARG USER_GROUP=choreo
 ARG USER_GROUP_ID=10786
 ARG USER_HOME=/home/${USER}
 ARG APP_NAME=license_generator
-ARG VERSION=0.1-x86_64
+ARG VERSION=1-x86_64
 ARG SERVER_NAME=${APP_NAME}-${VERSION}
 ARG APP_SERVER=${USER_HOME}/${SERVER_NAME}
-ARG SERVER_DIST_URL=https://www.dropbox.com/scl/fi/ip4nz88sqtfskyr28i6sq/license_generator-0.1-x86_64.zip?rlkey=qjdey843vtn4xvdtqdezm518f&st=oy08j7ig&dl=0
+ARG SERVER_DIST_URL=https://www.dropbox.com/scl/fi/zdnyxhz43qgfae4rh5bbl/license-generator-1-x86_64.zip?rlkey=3jzy6ckylgz499881aryt8s0y&st=vvozi9vz&dl=0
 
 ARG MOTD="\n\
 Hello there. Welcome to License Generator.\n\
