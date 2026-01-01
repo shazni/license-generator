@@ -1,0 +1,67 @@
+openapi: 3.0.3
+info:
+  title: License Generator REST API
+  description: >-
+    This is the API specification for the license generator application written in C++ with
+    cpprestsdk and Poco
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+  - url: http://localhost:9786/management/v1/license
+tags:
+  - name: license
+    description: Generate and manage licenses
+paths:
+  /generate:
+    post:
+      summary: Generate a new license based on consumer server key and expiry date
+      operationId: GenerateLicense
+      responses:
+        "200":
+          description: Successful operation
+        "400":
+          description: Invalid request body
+      tags:
+        - license
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/KeyValue"
+  /healthz:
+    summary: Healthcheck endpoint
+    get:
+      summary: Healthcheck
+      operationId: Healthcheck
+      responses:
+        "200":
+          description: Healthy response
+components:
+  schemas:
+    KeyValue:
+      type: object
+      required:
+        - plain_key
+        - expiry_date
+        - consumer_server_key
+        - write_to_file
+      properties:
+        plain_key:
+          type: string
+          example: "123#SAMPLE_KEY@RESTAPI"
+          description: Plain key identifier
+        expiry_date:
+          type: string
+          format: date-time
+          example: "2025-12-29T12:10:59"
+          description: License expiry date in ISO 8601 format
+        consumer_server_key:
+          type: string
+          example: "2315159644994497SKD37IHbZPEx2OJYKTj2GukM3z6z34jc+rYoZIgsXd8="
+          description: Consumer server key
+        write_to_file:
+          type: boolean
+          example: true
+          description: Whether to write the generated license to a file
