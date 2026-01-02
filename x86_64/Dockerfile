@@ -10,7 +10,7 @@ ARG APP_NAME=license-generator
 ARG VERSION=1-x86_64
 ARG SERVER_NAME=${APP_NAME}-${VERSION}
 ARG APP_SERVER=${USER_HOME}/${SERVER_NAME}
-ARG SERVER_DIST_URL=https://www.dropbox.com/scl/fi/zdnyxhz43qgfae4rh5bbl/license-generator-1-x86_64.zip?rlkey=3jzy6ckylgz499881aryt8s0y&st=vvozi9vz&dl=0
+ARG SERVER_DIST_URL=https://www.dropbox.com/scl/fi/lwkakzbzye9bt779afevj/license-generator-1-x86_64.zip?rlkey=dzfi3jv926fz2cwyc0g876zr8&st=9yhfjxfr&dl=0
 
 ARG MOTD="\n\
 Hello there. Welcome to License Generator.\n\
